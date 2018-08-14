@@ -46,6 +46,8 @@
 - isc-dhcp-client
 - ntp
 - wget
+- curl
+- rsync
 - ethtool
 - localepurge
 - telnetd
@@ -80,3 +82,9 @@
 - tcpdump
 - strace
 - sysstat
+- ipmitool
+- cron
+- screen
+- tmux
+- htop
+- postfix
