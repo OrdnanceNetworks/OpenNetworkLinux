@@ -65,6 +65,7 @@
 - smartmontools
 - realpath
 - iptables
+- iptables-persistent
 - onl-faultd
 - onlp-snmpd
 - oom-shim
