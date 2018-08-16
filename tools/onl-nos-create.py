@@ -799,6 +799,7 @@ include %(MTOP)s/builds/any/installer/builds/Makefile
 class builds_arch_installer_installed_builds_bootconfig(ArchFile):
     template="""
 NETDEV=ma1
+NETAUTO=none
 BOOTMODE=INSTALLED
 SWI=images::latest
 """
@@ -825,6 +826,7 @@ include %(MTOP)s/builds/any/installer/builds/Makefile
 class builds_arch_installer_swi_builds_bootconfig(ArchFile):
     template="""
 NETDEV=ma1
+NETAUTO=none
 BOOTMODE=SWI
 SWI=images::latest
 """
