@@ -1,3 +1,4 @@
 NETDEV=ma1
+NETAUTO=none
 BOOTMODE=SWI
 SWI=images::latest

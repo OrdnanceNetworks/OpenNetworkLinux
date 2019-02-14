@@ -46,6 +46,8 @@
 - isc-dhcp-client
 - ntp
 - wget
+- curl
+- rsync
 - ethtool
 - localepurge
 - telnetd
@@ -65,6 +67,7 @@
 - smartmontools
 - realpath
 - iptables
+- iptables-persistent
 - onl-faultd
 - onlp-snmpd
 - oom-shim
@@ -81,3 +84,8 @@
 - sysstat
 - ipmitool
 - lm-sensors
+- cron
+- screen
+- tmux
+- htop
+- postfix
