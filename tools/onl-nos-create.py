@@ -617,7 +617,7 @@ all:
 class setup(CommonFile):
     path='setup.env'
     template="""
-#!/bin/bash
+#!/bin/sh
 ############################################################
 #
 # The settings in this script are required
@@ -626,7 +626,18 @@ class setup(CommonFile):
 ############################################################
 
 # The root of the %(PREFIX)s build tree is here
-export %(PREFIX)s=$( cd "$(dirname "${BASH_SOURCE[0]}" )" && pwd)
+if [ -z "$%(PREFIX)s" ]; then
+    if [ -n "$BASH_SOURCE" ]; then
+        ME="${BASH_SOURCE[0]}"
+    elif [ -n "$ZSH_NAME" ]; then
+        ME="$0"
+    else
+        ME="${PWD:-$(pwd)}/setup.env"
+    fi
+    %(PREFIX)s="$(readlink -e "$ME")" || exit
+    %(PREFIX)s="${%(PREFIX)s%/*}"
+fi
+export %(PREFIX)s
 
 # The root of the ONL tree is here
 export ONL=%(TOP)s/sm/ONL
